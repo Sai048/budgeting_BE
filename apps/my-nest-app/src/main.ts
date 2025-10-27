@@ -1,5 +1,5 @@
-
-
+import * as dotenv from 'dotenv';
+dotenv.config();
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
@@ -7,6 +7,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   const globalPrefix = 'api';
   app.enableCors('*');
   app.setGlobalPrefix(globalPrefix);
@@ -14,7 +15,7 @@ async function bootstrap() {
     .setTitle('API Documentation')
     .setDescription('API endpoints and schemas for our NestJS app')
     .setVersion('1.0')
-    .addBearerAuth() 
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
