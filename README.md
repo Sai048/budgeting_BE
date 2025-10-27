@@ -44,5 +44,23 @@ add .env file and add below context:
 Run the development server: npm run start
 
 
+To register a new user, use the following endpoint:
+https://budgeting-be.onrender.com/api/users/register
+To create a new user, please use the following JSON structure as a reference.
+{
+  "name": "Sai",
+  "email": "sai@gmail.com",
+  "password": "123"
+}
+
+
+To login :
+{
+  "email": "sai@gmail.com",
+  "password": "123"
+}
+
+
+
 
 
