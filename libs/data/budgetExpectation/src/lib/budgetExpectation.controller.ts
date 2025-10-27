@@ -14,11 +14,12 @@ import {
   ExpectationBudgetDTO,
   UpdateExpectationBudgetDTOBudgetDTO,
 } from './dto/budgetExpectation.dto';
-import { ApiQuery, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'libs/data/auth/src/lib/auth.guard';
 
 @ApiTags('budgetExpectation')
 @UseGuards(JwtAuthGuard)
+@ApiBearerAuth('access-token')
 @Controller('budget-expectation')
 export class BudgetExpectationController {
   constructor(private readonly budgetService: BudgetExpectationService) {}
@@ -56,7 +57,7 @@ export class BudgetExpectationController {
       if (toDate) filters.toDate = new Date(toDate);
     }
 
-    return this.budgetService.getAllBudgetsByUserId(userId,filters);
+    return this.budgetService.getAllBudgetsByUserId(userId, filters);
   }
 
   @Get(':id')

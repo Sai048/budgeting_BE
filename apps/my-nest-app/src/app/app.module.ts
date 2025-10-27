@@ -8,19 +8,11 @@ import { BudgetModule } from '../../../../libs/data/budget/src/lib/budget.module
 import { Transaction } from 'libs/data-models/budget-model/src/lib/budget.entity';
 import { BudgetExpectation } from 'libs/data-models/budgettExpectation-model/src/lib/budgettExpectation.entity';
 import { BudgetExpectationModule } from 'libs/data/budgetExpectation/src/lib/budgetExpectation.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    // TypeOrmModule.forRoot({
-    //   type: 'mysql',
-    //   host: process.env['DB-Host'],
-    //   port: Number(process.env.DB_PORT),
-    //   username: 'root',
-    //   password: process.env['DB-Password'],
-    //   database: process.env['Database-Name'],
-    //   synchronize: false,
-    //   autoLoadEntities: true
-    // }),
+     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env['DB-Host'],

@@ -12,12 +12,13 @@ import {
 import { TransactionService } from './budget.service';
 import { Transaction } from '../../../../data-models/budget-model/src/lib/budget.entity';
 import { User } from '../../../../data-models/auth-model/src/lib/auth.entity';
-import { ApiProperty, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiProperty, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { BudgetDTO, UpdateBudgetDTO } from './dto/budget.dto';
 import { JwtAuthGuard } from '../../../../data/auth/src/lib/auth.guard';
 
 @ApiTags('transactions')
 @UseGuards(JwtAuthGuard)
+@ApiBearerAuth('access-token')
 @Controller('transactions')
 export class TransactionController {
   constructor(private readonly transactionService: TransactionService) {}
