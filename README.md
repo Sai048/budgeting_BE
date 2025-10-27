@@ -22,6 +22,10 @@ Backend:
 if you want to open code from github:
 
 Installation & Setup
+
+The database is hosted on AWS RDS, so you don't need to set up a local database on your system.
+
+
 Clone the repository: https://github.com/Sai048/budgeting_BE.git
 change directory: cd budgeting_FE
 
@@ -38,3 +42,7 @@ add .env file and add below context:
     PORTAPP=9000
 
 Run the development server: npm run start
+
+
+
+
