@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve my-nest-app",
-    "build": "nx build my-nest-app" 
-    
+    "build": "nx build my-nest-app"
   },
   "private": true,
   "dependencies": {
