@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@my-nest-app/auth": ["libs/data/auth/src/index.ts"],
+      "@my-nest-app/auth-model": ["libs/data-models/auth-model/src/index.ts"],
+      "@my-nest-app/budget-model": [
+        "libs/data-models/budget-model/src/index.ts"
+      ],
+      "@my-nest-app/budget": ["libs/data/budget/src/index.ts"],
+      "@my-nest-app/budgetExpectation": [
+        "libs/data/budgetExpectation/src/index.ts"
+      ],
+      "@my-nest-app/budgetExpectation-model": [
+        "libs/data-model/budgetExpectation-model/src/index.ts"
+      ],
+      "@my-nest-app/budgettExpectation-model": [
+        "libs/data-models/budgettExpectation-model/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
