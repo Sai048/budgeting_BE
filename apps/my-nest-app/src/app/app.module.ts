@@ -11,18 +11,27 @@ import { BudgetExpectationModule } from 'libs/data/budgetExpectation/src/lib/bud
 
 @Module({
   imports: [
+    // TypeOrmModule.forRoot({
+    //   type: 'postgres',
+    //   host: process.env['DB-Host'],
+    //   port: Number(process.env.DB_PORT),
+    //   username: 'postgres',
+    //   password: process.env['DB-Password'],
+    //   database: process.env['Database-Name'],
+    //   ssl: {
+    //     rejectUnauthorized: false,
+    //   },
+    //   autoLoadEntities: true,
+    //   synchronize: true,
+    // }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env['DB-Host'],
-      port: Number(process.env.DB_PORT),
-      username: 'postgres',
-      password: process.env['DB-Password'],
-      database: process.env['Database-Name'],
+      url: process.env.DATABASE_URL,
+      autoLoadEntities: true,
+      synchronize: true, 
       ssl: {
         rejectUnauthorized: false,
       },
-      autoLoadEntities: true,
-      synchronize: true,
     }),
 
     AuthModule,
